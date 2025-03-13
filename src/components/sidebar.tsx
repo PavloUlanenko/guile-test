@@ -4,6 +4,7 @@ import Image from "next/image"
 import { cn } from "@/lib/utils"
 import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
+import {navItems} from '@/constant/common';
 
 interface SidebarProps {
   user: {
@@ -13,14 +14,6 @@ interface SidebarProps {
     avatar: string
   }
 }
-
-const navItems = [
-  { name: "account", href: "#account" },
-  { name: "profile", href: "#profile" },
-  { name: "appointments", href: "#appointments" },
-  { name: "wallet", href: "#wallet" },
-  { name: "reviews", href: "#reviews" },
-]
 
 export default function Sidebar({ user }: SidebarProps) {
   const [activeHash, setActiveHash] = useState("")
@@ -133,12 +126,12 @@ export default function Sidebar({ user }: SidebarProps) {
 
           <div className="flex justify-between items-center text-left">
             <div>
-              <p className="text-h3 text-gray-01 mb-[15px]">{user.bookings}</p>
+              <p className="text-h3 text-gray-01 mb-[5px]">{user.bookings}</p>
               <p className="text-gray-02 text-body-14">bookings</p>
             </div>
-            <div className={"divider flex-grow-0 h-[26px] w-0.5 bg-gray-07"}></div>
+            <div className={"divider flex-grow-0 h-[26px] w-0.5 bg-gray-07 rounded-sm"}></div>
             <div>
-              <p className="text-h3 text-gray-01 mb-[15px]">{user.spent}</p>
+              <p className="text-h3 text-gray-01 mb-[5px]">{user.spent}</p>
               <p className="text-gray-02 text-body-14">total spent</p>
             </div>
           </div>

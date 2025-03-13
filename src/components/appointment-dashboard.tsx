@@ -4,6 +4,7 @@ import Sidebar from "@/components/sidebar"
 import AppointmentCard from "@/components/appointment-card"
 import { getUpcomingAppointments, getPastAppointments } from "@/lib/data-utils"
 import type { MockData } from "@/lib/types"
+import AccountDropdown from '@/components/account-dropdown';
 
 interface AppointmentDashboardProps {
   initialData: MockData
@@ -49,16 +50,7 @@ export default function AppointmentDashboard({ initialData }: AppointmentDashboa
               <span className="absolute top-0 left-[21px] h-1.5 w-1.5 bg-gold-02 rounded-full"></span>
             </button>
             <div className="flex items-center gap-2">
-              <div className="  rounded-full overflow-hidden mr-3.5">
-                <Image
-                  src="/img/avatar.png"
-                  alt="User avatar"
-                  width={40}
-                  height={40}
-                  className="object-cover"
-                />
-              </div>
-              <ChevronDown className="h-4 w-4 text-white-04 cursor-pointer"/>
+              <AccountDropdown user={user} />
             </div>
           </div>
         </header>
