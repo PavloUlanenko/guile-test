@@ -1,10 +1,9 @@
 import Image from "next/image"
-import { ChevronLeft, Bell, ChevronDown } from "lucide-react"
+import {ChevronLeft, ChevronDown} from 'lucide-react'
 import Sidebar from "@/components/sidebar"
 import AppointmentCard from "@/components/appointment-card"
 import { getUpcomingAppointments, getPastAppointments } from "@/lib/data-utils"
 import type { MockData } from "@/lib/types"
-import Button from '@/components/button';
 
 interface AppointmentDashboardProps {
   initialData: MockData
