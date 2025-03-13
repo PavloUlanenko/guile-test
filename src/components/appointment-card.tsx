@@ -1,7 +1,7 @@
 import Image from "next/image"
-import { MoreVertical } from "lucide-react"
 import { formatAppointmentDate } from "@/lib/data-utils"
 import {Appointment} from '@/lib/types';
+import DropdownMenu from '@/components/dropdown-menu';
 
 interface AppointmentProps {
   appointment: Appointment;
@@ -54,9 +54,7 @@ export default function AppointmentCard({ appointment, showMoreOptions = false }
           </div>
 
           {showMoreOptions && (
-            <button className="text-gray-500 hover:text-white">
-              <MoreVertical className="h-5 w-5" />
-            </button>
+            <DropdownMenu />
           )}
         </div>
 
