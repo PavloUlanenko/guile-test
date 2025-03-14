@@ -1,4 +1,5 @@
-import { Skeleton } from '@/components/skeleton';
+import {Skeleton} from '@/components/skeleton';
+
 
 export function AppointmentSkeleton() {
   return (
@@ -21,7 +22,7 @@ export function AppointmentSkeleton() {
         <Skeleton className="h-[37px] w-[140px] rounded-full" />
       </div>
     </div>
-  );
+  )
 }
 
 export function SectionSkeleton({ count = 3 }: { count?: number }) {
@@ -32,7 +33,7 @@ export function SectionSkeleton({ count = 3 }: { count?: number }) {
         <AppointmentSkeleton key={index} />
       ))}
     </section>
-  );
+  )
 }
 
 export function DashboardSkeleton() {
@@ -49,5 +50,5 @@ export function DashboardSkeleton() {
       <SectionSkeleton count={2} />
       <SectionSkeleton count={1} />
     </div>
-  );
+  )
 }

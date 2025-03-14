@@ -126,7 +126,7 @@ const MOCK_DATA: MockData = {
 // Server-side data fetching - now uses hardcoded data
 export async function fetchMockData(): Promise<MockData> {
   // Simulate a small delay to mimic a real API call
-  await new Promise((resolve) => setTimeout(resolve, 300));
+  await new Promise((resolve) => setTimeout(resolve, 3000));
   return { ...MOCK_DATA };
 }
 
