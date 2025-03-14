@@ -10,7 +10,7 @@ const config: Config = {
   ],
   theme: {
     fontFamily: {
-      enkel: ["Enkel", ...defaultTheme.fontFamily.sans],
+      enkel: ["var(--font-enkel)", ...defaultTheme.fontFamily.sans],
     },
     fontSize: {
       ...defaultTheme.fontSize,
@@ -46,6 +46,7 @@ const config: Config = {
         "green-01": "#3F825A",
       },
       spacing: {
+        24: "6rem",
         25: "6.25rem",
         28: "7rem",
       },

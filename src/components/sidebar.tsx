@@ -112,7 +112,7 @@ export default function Sidebar({ user }: SidebarProps) {
         </div>
 
         {/* User profile */}
-        <div className="mb-25">
+        <div className="mb-24">
           <div className="h-30 w-30 rounded-full overflow-hidden mb-9">
             <Image
               src={user.avatar || "/img/avatar.png"}
@@ -122,7 +122,7 @@ export default function Sidebar({ user }: SidebarProps) {
               className="object-cover"
             />
           </div>
-          <h2 className="text-h2 text-white-01 mb-[46px]">{user.name}</h2>
+          <h2 className="text-h2 text-white-01 mb-9">{user.name}</h2>
 
           <div className="flex justify-between items-center text-left">
             <div>
@@ -139,7 +139,7 @@ export default function Sidebar({ user }: SidebarProps) {
 
         {/* Navigation */}
         <nav>
-          <ul className={"flex flex-col gap-6 lg:gap-12"}>
+          <ul className={"flex flex-col gap-6 lg:gap-8"}>
             {navItems.map((item) => (
               <li key={item.name}>
                 <a

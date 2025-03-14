@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.container {
+	margin-left: 9.24%;
+	margin-right: 13.13%;
+	width: calc(100% - 22.37%);
+}
+
+@media (max-width: 1280px) {
+	.container {
+		margin-left: 5%;
+		margin-right: 5%;
+		width: 90%;
+	}
+}

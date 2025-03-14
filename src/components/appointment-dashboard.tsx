@@ -56,7 +56,7 @@ export default function AppointmentDashboard({ initialData }: AppointmentDashboa
         </header>
 
         {/* Coming up section */}
-        <section className="w-[90%] md:w-[95%] lg:max-w-736px mx-auto mb-[72px]">
+        <section className="container mb-[72px]">
           <h2 className="text-h1 text-white-02 mb-10">coming up.</h2>
 
           {upcomingAppointments.length > 0 ? (
@@ -80,7 +80,7 @@ export default function AppointmentDashboard({ initialData }: AppointmentDashboa
         </section>
 
         {/* Past section */}
-        <section className={'w-[90%] md:w-[95%] lg:max-w-736px mx-auto'}>
+        <section className={'container'}>
           <h2 className="text-h1 text-white-02 mb-10">past.</h2>
 
           {pastAppointments.length > 0 ? (
