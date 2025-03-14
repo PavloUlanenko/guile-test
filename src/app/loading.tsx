@@ -1,5 +1,5 @@
-import { SidebarSkeleton } from "@/components/sidebar-skeleton"
-import { DashboardSkeleton } from "@/components/loading-skeleton"
+import { DashboardSkeleton } from '@/components/loading-skeleton';
+import { SidebarSkeleton } from '@/components/sidebar-skeleton';
 
 export default function Loading() {
   return (
@@ -9,5 +9,5 @@ export default function Loading() {
         <DashboardSkeleton />
       </div>
     </main>
-  )
+  );
 }

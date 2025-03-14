@@ -1,20 +1,20 @@
-import { Suspense } from "react"
-import { DashboardSkeleton } from "@/components/loading-skeleton"
-import AppointmentDashboard from "@/components/appointment-dashboard"
-import Sidebar from "@/components/sidebar"
-import { fetchMockData } from "@/lib/data-utils"
+import AppointmentDashboard from '@/components/appointment-dashboard';
+import { DashboardSkeleton } from '@/components/loading-skeleton';
+import Sidebar from '@/components/sidebar';
+import { fetchMockData } from '@/lib/data-utils';
+import { Suspense } from 'react';
 
 export default async function Home() {
   // Fetch data once at the page level
-  const data = await fetchMockData()
+  const data = await fetchMockData();
 
   // Create user object for sidebar
   const user = {
     name: data.user.name,
     bookings: data.user.bookings,
     spent: data.user.totalSpent,
-    avatar: "",
-  }
+    avatar: '',
+  };
 
   return (
     <main className="dark flex min-h-screen w-full flex-col">
@@ -28,5 +28,5 @@ export default async function Home() {
         </Suspense>
       </div>
     </main>
-  )
+  );
 }

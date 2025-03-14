@@ -1,10 +1,9 @@
-import {Skeleton} from '@/components/skeleton';
-
+import { Skeleton } from '@/components/skeleton';
 
 export function SidebarSkeleton() {
   return (
-    <div className="w-64 bg-black-03 h-screen p-4">
-      <div className="flex items-center gap-3 mb-8">
+    <div className="bg-black-03 h-screen w-64 p-4">
+      <div className="mb-8 flex items-center gap-3">
         <Skeleton className="h-12 w-12 rounded-full" />
         <div className="space-y-2">
           <Skeleton className="h-4 w-24" />
@@ -14,7 +13,7 @@ export function SidebarSkeleton() {
 
       <div className="space-y-6">
         <div>
-          <Skeleton className="h-4 w-20 mb-3" />
+          <Skeleton className="mb-3 h-4 w-20" />
           <div className="space-y-2">
             <Skeleton className="h-8 w-full rounded-md" />
             <Skeleton className="h-8 w-full rounded-md" />
@@ -23,7 +22,7 @@ export function SidebarSkeleton() {
         </div>
 
         <div>
-          <Skeleton className="h-4 w-20 mb-3" />
+          <Skeleton className="mb-3 h-4 w-20" />
           <div className="space-y-2">
             <Skeleton className="h-8 w-full rounded-md" />
             <Skeleton className="h-8 w-full rounded-md" />
@@ -31,5 +30,5 @@ export function SidebarSkeleton() {
         </div>
       </div>
     </div>
-  )
+  );
 }
