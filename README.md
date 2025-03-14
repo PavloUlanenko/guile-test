@@ -22,12 +22,14 @@ Here’s the updated `README.md` file with the focus on **Next.js**, **React**, 
 ### Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/your-username/guile.git
    cd guile
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    # or
@@ -37,6 +39,7 @@ Here’s the updated `README.md` file with the focus on **Next.js**, **React**, 
    ```
 
 3. Start the development server:
+
    ```bash
    npm run dev
    # or
@@ -54,6 +57,7 @@ Deploy your blog to the cloud with [Vercel](https://vercel.com):
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/your-username/guile&project-name=guile&repository-name=guile)
 
 ## Project Structure
+
 - `/components`: Reusable React components.
 - `/app`: Next.js pages and routing.
 - `/lib`: Utilities.
