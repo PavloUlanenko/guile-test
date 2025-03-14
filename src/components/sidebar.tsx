@@ -1,44 +1,44 @@
-"use client"
+'use client';
 
-import Image from "next/image"
-import { cn } from "@/lib/utils"
-import { useState, useEffect } from "react"
-import { Menu, X } from "lucide-react"
-import {navItems} from '@/constant/common';
+import { navItems } from '@/constant/common';
+import { cn } from '@/lib/utils';
+import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 interface SidebarProps {
   user: {
-    name: string
-    bookings: number
-    spent: string
-    avatar: string
-  }
+    name: string;
+    bookings: number;
+    spent: string;
+    avatar: string;
+  };
 }
 
 export default function Sidebar({ user }: SidebarProps) {
-  const [activeHash, setActiveHash] = useState("")
-  const [isOpen, setIsOpen] = useState(false)
+  const [activeHash, setActiveHash] = useState('');
+  const [isOpen, setIsOpen] = useState(false);
 
   // Handle hash changes
   useEffect(() => {
-    setActiveHash(window.location.hash)
+    setActiveHash(window.location.hash);
 
     const handleHashChange = () => {
-      setActiveHash(window.location.hash)
-    }
+      setActiveHash(window.location.hash);
+    };
 
-    window.addEventListener("hashchange", handleHashChange)
+    window.addEventListener('hashchange', handleHashChange);
 
     return () => {
-      window.removeEventListener("hashchange", handleHashChange)
-    }
-  }, [])
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, []);
 
   // Close sidebar when clicking outside on mobile
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      const sidebar = document.getElementById("mobile-sidebar")
-      const toggleButton = document.getElementById("sidebar-toggle")
+      const sidebar = document.getElementById('mobile-sidebar');
+      const toggleButton = document.getElementById('sidebar-toggle');
 
       if (
         isOpen &&
@@ -47,76 +47,89 @@ export default function Sidebar({ user }: SidebarProps) {
         !sidebar.contains(event.target as Node) &&
         !toggleButton.contains(event.target as Node)
       ) {
-        setIsOpen(false)
+        setIsOpen(false);
       }
-    }
+    };
 
-    document.addEventListener("mousedown", handleClickOutside)
+    document.addEventListener('mousedown', handleClickOutside);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside)
-    }
-  }, [isOpen])
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]);
 
   // Prevent scrolling when sidebar is open on mobile
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = "hidden"
+      document.body.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow = "auto"
+      document.body.style.overflow = 'auto';
     }
 
     return () => {
-      document.body.style.overflow = "auto"
-    }
-  }, [isOpen])
+      document.body.style.overflow = 'auto';
+    };
+  }, [isOpen]);
 
   return (
     <>
       {/* Mobile Sidebar Toggle Button */}
       <button
         id="sidebar-toggle"
-        className={`md:hidden sticky top-[26px] h-fit left-4 z-50 bg-black-02 p-2 rounded-lg`}
+        className={`bg-black-02 sticky left-4 top-[26px] z-50 h-fit rounded-lg p-2 md:hidden`}
         onClick={() => setIsOpen(!isOpen)}
-        aria-label={isOpen ? "Close sidebar" : "Open sidebar"}
+        aria-label={isOpen ? 'Close sidebar' : 'Open sidebar'}
       >
-        {isOpen ? <X className="h-6 w-6 text-white-01" /> : <Menu className="h-6 w-6 text-white-01" />}
+        {isOpen ? (
+          <X className="text-white-01 h-6 w-6" />
+        ) : (
+          <Menu className="text-white-01 h-6 w-6" />
+        )}
       </button>
 
       {/* Mobile Sidebar Overlay */}
       {isOpen && (
-        <div className="md:hidden fixed inset-0 bg-black bg-opacity-50 z-40" onClick={() => setIsOpen(false)} />
+        <div
+          className="fixed inset-0 z-40 bg-black bg-opacity-50 md:hidden"
+          onClick={() => setIsOpen(false)}
+        />
       )}
 
       {/* Sidebar - Desktop (always visible) & Mobile (conditionally visible) */}
       <aside
         id="mobile-sidebar"
         className={cn(
-          "lg:w-[382px] pt-[29px] pb-[168px] px-10 lg:px-20 bg-black-02",
-          "md:block",
-          "fixed top-7 left-0 h-full z-50 transition-transform duration-300 ease-in-out",
-          isOpen ? "translate-x-0" : "-translate-x-full", // Slide in/out on mobile
-          "md:relative md:translate-x-0",
+          'bg-black-02 px-10 pb-[168px] pt-[29px] lg:w-[382px] lg:px-20',
+          'md:block',
+          'fixed left-0 top-7 z-50 h-full transition-transform duration-300 ease-in-out',
+          isOpen ? 'translate-x-0' : '-translate-x-full', // Slide in/out on mobile
+          'md:relative md:translate-x-0',
         )}
       >
         <button
-          className="absolute top-4 right-4 md:hidden"
+          className="absolute right-4 top-4 md:hidden"
           onClick={() => setIsOpen(false)}
           aria-label="Close sidebar"
         >
-          <X className="h-6 w-6 text-white-01" />
+          <X className="text-white-01 h-6 w-6" />
         </button>
 
         {/* Logo */}
         <div className="mb-[55px]">
-          <Image src={"/img/scissors.svg"} alt={"Scissors logo"} width={41} height={36} className="object-contain" />
+          <Image
+            src={'/img/scissors.svg'}
+            alt={'Scissors logo'}
+            width={41}
+            height={36}
+            className="object-contain"
+          />
         </div>
 
         {/* User profile */}
         <div className="mb-24">
-          <div className="h-30 w-30 rounded-full overflow-hidden mb-9">
+          <div className="h-30 w-30 mb-9 overflow-hidden rounded-full">
             <Image
-              src={user.avatar || "/img/avatar.png"}
-              alt={"User avatar"}
+              src={user.avatar || '/img/avatar.png'}
+              alt={'User avatar'}
               width={120}
               height={120}
               className="object-cover"
@@ -124,12 +137,12 @@ export default function Sidebar({ user }: SidebarProps) {
           </div>
           <h2 className="text-h2 text-white-01 mb-9">{user.name}</h2>
 
-          <div className="flex justify-between items-center text-left">
+          <div className="flex items-center justify-between text-left">
             <div>
               <p className="text-h3 text-gray-01 mb-[5px]">{user.bookings}</p>
               <p className="text-gray-02 text-body-14">bookings</p>
             </div>
-            <div className={"divider flex-grow-0 h-[26px] w-0.5 bg-gray-07 rounded-sm"}></div>
+            <div className={'divider bg-gray-07 h-[26px] w-0.5 flex-grow-0 rounded-sm'}></div>
             <div>
               <p className="text-h3 text-gray-01 mb-[5px]">{user.spent}</p>
               <p className="text-gray-02 text-body-14">total spent</p>
@@ -139,14 +152,16 @@ export default function Sidebar({ user }: SidebarProps) {
 
         {/* Navigation */}
         <nav>
-          <ul className={"flex flex-col gap-6 lg:gap-8"}>
+          <ul className={'flex flex-col gap-6 lg:gap-8'}>
             {navItems.map((item) => (
               <li key={item.name}>
                 <a
                   href={item.href}
                   className={cn(
-                    "block transition-colors text-body-16m",
-                    item.href === activeHash ? "text-white-02 font-medium" : "text-gray-03 hover:text-gray-300",
+                    'text-body-16m block transition-colors',
+                    item.href === activeHash
+                      ? 'text-white-02 font-medium'
+                      : 'text-gray-03 hover:text-gray-300',
                   )}
                   onClick={() => setIsOpen(false)}
                 >
@@ -158,5 +173,5 @@ export default function Sidebar({ user }: SidebarProps) {
         </nav>
       </aside>
     </>
-  )
+  );
 }

@@ -1,14 +1,14 @@
 import { Config } from 'tailwindcss';
 
 const fonts: NonNullable<Config['theme']>['fontSize'] = {
-  'h0': [
+  h0: [
     '5.875rem', // 94px
     {
       lineHeight: '5.875rem', // 94px
       fontWeight: 500,
     },
   ],
-  'h1': [
+  h1: [
     '3rem', // 48px
     {
       lineHeight: '3.6rem',
@@ -16,7 +16,7 @@ const fonts: NonNullable<Config['theme']>['fontSize'] = {
       letterSpacing: '-0.03rem',
     },
   ],
-  'h2': [
+  h2: [
     '2rem', // 32px
     {
       lineHeight: '2.25rem', // 36px
@@ -24,7 +24,7 @@ const fonts: NonNullable<Config['theme']>['fontSize'] = {
       letterSpacing: '-0.04rem',
     },
   ],
-  'h3': [
+  h3: [
     '1.75rem', // 28px
     {
       lineHeight: '2rem', // 32px
@@ -32,7 +32,7 @@ const fonts: NonNullable<Config['theme']>['fontSize'] = {
       letterSpacing: '-0.035rem',
     },
   ],
-  'h4': [
+  h4: [
     '1.5rem', // 24px
     {
       lineHeight: '1.8rem',
@@ -40,7 +40,7 @@ const fonts: NonNullable<Config['theme']>['fontSize'] = {
       letterSpacing: '-0.015rem',
     },
   ],
-  'h5': [
+  h5: [
     '1.125rem', // 18px
     {
       lineHeight: '1.5rem', // 24px
@@ -101,7 +101,7 @@ const fonts: NonNullable<Config['theme']>['fontSize'] = {
       letterSpacing: '0.15rem',
     },
   ],
-  'button': [
+  button: [
     '0.75rem', // 12px
     {
       lineHeight: '1.125rem', // 18px

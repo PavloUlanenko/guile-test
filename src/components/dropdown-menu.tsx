@@ -1,30 +1,30 @@
-"use client"
+'use client';
 
-import { useState, useRef, useEffect } from "react"
-import Image from 'next/image'
+import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react';
 
 export default function DropdownMenu() {
-  const [isOpen, setIsOpen] = useState(false)
-  const dropdownRef = useRef<HTMLDivElement>(null)
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsOpen(false)
+        setIsOpen(false);
       }
     }
 
-    document.addEventListener("mousedown", handleClickOutside)
+    document.addEventListener('mousedown', handleClickOutside);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside)
-    }
-  }, [])
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
     <>
       <div className="relative" ref={dropdownRef}>
         <button
-          className={`hover:bg-black-04 w-9 h-9 rounded-xl flex items-center justify-center focus:outline-none transition-colors ${isOpen ? 'bg-black-04' : ''}`}
+          className={`hover:bg-black-04 flex h-9 w-9 items-center justify-center rounded-xl transition-colors focus:outline-none ${isOpen ? 'bg-black-04' : ''}`}
           onClick={() => setIsOpen(!isOpen)}
           aria-expanded={isOpen}
           aria-haspopup="true"
@@ -42,10 +42,10 @@ export default function DropdownMenu() {
 
         {/* Dropdown menu */}
         {isOpen && (
-          <div className="absolute bottom-full mb-2 right-0 bg-black-02 text-gray-08 rounded-2xl p-2 w-[158px] text-white shadow-lg overflow-y-auto">
+          <div className="bg-black-02 text-gray-08 absolute bottom-full right-0 mb-2 w-[158px] overflow-y-auto rounded-2xl p-2 text-white shadow-lg">
             <ul className="space-y-1">
               <li>
-                <button className="flex items-center gap-3 px-2 py-2 w-full text-left hover:bg-zinc-800 rounded-xl">
+                <button className="flex w-full items-center gap-3 rounded-xl px-2 py-2 text-left hover:bg-zinc-800">
                   <Image
                     src={`/img/re-book.svg`}
                     alt="re-book"
@@ -56,9 +56,9 @@ export default function DropdownMenu() {
                   <span className="text-gray-08 text-title-14 font-semibold">rebook</span>
                 </button>
               </li>
-              <ul className={'w-full h-px bg-black-05'}></ul>
+              <ul className={'bg-black-05 h-px w-full'}></ul>
               <li>
-                <button className="flex items-center gap-3 px-2 py-2 w-full text-left hover:bg-zinc-800 rounded-xl">
+                <button className="flex w-full items-center gap-3 rounded-xl px-2 py-2 text-left hover:bg-zinc-800">
                   <Image
                     src={`/img/call.svg`}
                     alt="re-book"
@@ -70,7 +70,7 @@ export default function DropdownMenu() {
                 </button>
               </li>
               <li>
-                <button className="flex items-center gap-3 px-2 py-2 w-full text-left hover:bg-zinc-800 rounded-xl">
+                <button className="flex w-full items-center gap-3 rounded-xl px-2 py-2 text-left hover:bg-zinc-800">
                   <Image
                     src={`/img/edit.svg`}
                     alt="re-book"
@@ -86,5 +86,5 @@ export default function DropdownMenu() {
         )}
       </div>
     </>
-  )
+  );
 }
