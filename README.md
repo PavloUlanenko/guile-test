@@ -2,16 +2,15 @@ Here’s the updated `README.md` file with the focus on **Next.js**, **React**, 
 
 ---
 
-# Guile: A Modern Blog Starter with Next.js, React, and Tailwind CSS
+# Guile: A Project with Next.js, React, and Tailwind CSS
 
-**Guile** is a statically generated blog starter built with **Next.js**, **React**, and **Tailwind CSS**. It provides a clean and modern foundation for creating a blog with dynamic content, responsive design, and fast performance.
+**Guile** is a project built with **Next.js**, **React**, and **Tailwind CSS**. It provides a clean and modern foundation for creating a blog with dynamic content, responsive design, and fast performance.
 
 ## Features
 
 - **Next.js**: Leverages static generation for fast page loads and SEO-friendly content.
 - **React**: A powerful JavaScript library for building dynamic user interfaces.
 - **Tailwind CSS**: A utility-first CSS framework for rapid and responsive design.
-- **Markdown Support**: Write blog posts in Markdown for easy content management.
 
 ## Getting Started
 
